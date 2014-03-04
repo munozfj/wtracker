@@ -14,6 +14,10 @@ gem 'turbolinks'
 gem 'jbuilder'
 
 
+group :development do
+  gem 'rails_layout'
+end
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
