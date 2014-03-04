@@ -9,6 +9,9 @@ gem 'bcrypt'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder'
 
 
 group :development, :test do
@@ -30,9 +33,6 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
-  gem 'jquery-rails'
-  gem 'turbolinks'
-  gem 'jbuilder'
 end
 
 group :test do
