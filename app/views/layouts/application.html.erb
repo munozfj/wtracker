@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="es" dir="lr">
+<html lang="en" dir="lr">
   <head>
 
     <%= render 'layouts/meta' %>
+
+    <%= render 'layouts/favicons' %>
 
     <title><%= content_for?(:title) ? yield(:title) : "Wtracker" %></title>
    
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     
     <%= csrf_meta_tags %>
+
+    <%= render 'layouts/shim' %>
 
   </head>
   <body>
