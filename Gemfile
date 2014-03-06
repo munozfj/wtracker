@@ -13,6 +13,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 
+#Para mostrar errores
+gem 'better_errors'
+gem 'quiet_assets'
+
 
 group :development do
   gem 'rails_layout'
@@ -51,3 +55,5 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+
