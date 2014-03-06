@@ -5,7 +5,6 @@ ruby '2.1.0'
 gem 'rails', '4.0.3'
 
 gem 'bootstrap-sass'
-gem 'bcrypt-ruby', '3.1.2'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'

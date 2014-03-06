@@ -4,11 +4,11 @@
 // import fonts
 @font-face {
     font-family: 'mrs_saint_delafieldregular';
-    src: url('./fonts/Mrs_Saint_Delafield/mrssaintdelafield-regular-webfont.eot');
-    src: url('./fonts/Mrs_Saint_Delafield/mrssaintdelafield-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./fonts/Mrs_Saint_Delafield/mrssaintdelafield-regular-webfont.woff') format('woff'),
-         url('./fonts/Mrs_Saint_Delafield/mrssaintdelafield-regular-webfont.ttf') format('truetype'),
-         url('./fonts/Mrs_Saint_Delafield/mrssaintdelafield-regular-webfont.svg#mrs_saint_delafieldregular') format('svg');
+    src: font-url('Mrs_Saint_Delafield/mrssaintdelafield-regular-webfont.eot');
+    src: font-url('Mrs_Saint_Delafield/mrssaintdelafield-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('Mrs_Saint_Delafield/mrssaintdelafield-regular-webfont.woff') format('woff'),
+         font-url('Mrs_Saint_Delafield/mrssaintdelafield-regular-webfont.ttf') format('truetype'),
+         font-url('Mrs_Saint_Delafield/mrssaintdelafield-regular-webfont.svg#mrs_saint_delafieldregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -81,18 +81,31 @@ footer
 }
 
 
-h1
-{
-  font-family: "Mrs Saint Delafield", cursive;
-}
-
 /* Barra de navegcion */
 .navbar-brand {
-  font-family: Impact, Charcoal, sans-serif;
-  font-size: 30px;
+  font-family: 'mrs_saint_delafieldregular', Verdana, cursive;
+  font-size: 35px;
+  font-weight: bold;
 
 }
 .navbar-brand:hover {
   text-decoration: none;
   color: green;
 }
+
+#container-stitched {
+    /*stitching*/
+    outline: 1px dashed #98abb9;
+    outline-offset: -5px;
+     
+    background-color: #556068;
+    height: 200px;
+    width: 400px;
+    margin: 100px auto;
+     
+    /*shadow*/
+    -webkit-box-shadow: 2px 2px 2px #000;
+    -moz-box-shadow: 2px 2px 2px #000;
+    box-shadow: 2px 2px 2px #000;
+}
+    
