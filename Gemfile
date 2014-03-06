@@ -4,6 +4,7 @@ ruby '2.1.0'
 
 gem 'rails', '4.0.3'
 
+gem 'devise'
 gem 'bootstrap-sass'
 gem 'faker'
 gem 'will_paginate'
