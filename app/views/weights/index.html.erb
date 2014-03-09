@@ -1,0 +1,38 @@
+
+<div class="jumbotron">
+
+<h1 class="brand">Weight History</h1>
+
+<table class="table table-striped table-bordered table-hover table-condensed table-responsive">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Peso</th>
+      <th>Porc. Grasa</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weights.each do |w| %>
+      <tr>
+        <td><%= link_to w.date, weight_path(w.id) %></td>
+        <td><%= w.weight %></td>
+        <td><%= w.fat_porcentage %></td>
+        <td><%= link_to image_tag('edit.png', alt:'edit', size:'22x22')  , edit_weight_path(w.id) %> </td>
+        <td><%= link_to image_tag('delete.png', alt:'edit', size:'22x22'), w, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'New Weight', new_weight_path %>
+        
+</div>
+
+

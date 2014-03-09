@@ -1,2 +1,22 @@
-<h1>Panel de Control</h1>
-<p>Find me in app/views/static_pages/help.html.erb</p>
+<div class="jumbotron">
+<div class="row">
+  <div class="col-md-6 new-font panel">
+    <%= link_to '<h1> Profile </h1>'.html_safe, '#' %>
+  </div>
+  <div class="col-md-6 new-font panel">
+    
+    <%= link_to '<h1> Weight History </h1>'.html_safe, weights_path %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 new-font panel">
+      
+      <%= link_to '<h1> Graphs </h1>'.html_safe, '#' %>
+  </div>
+  <div class="col-md-6 new-font panel">
+      
+      <%= link_to '<h1> More ... </h1>'.html_safe, '#' %>
+  </div>
+</div>
+        
+</div>

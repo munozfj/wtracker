@@ -1,0 +1,28 @@
+
+<div class="jumbotron">
+
+<h1 class="new-font">New Weight </h1>
+
+<%= form_for(:weight, url:{controller: 'weights', action: 'create'}) do |f| %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :fat_porcentage %><br>
+    <%= f.text_field :fat_porcentage %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Volver', weights_path %>
+
+</div>
