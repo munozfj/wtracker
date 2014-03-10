@@ -1,4 +1,7 @@
 class WeightsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     @weights=Weight.where(user_id: current_user.id).sorted
   end
@@ -9,7 +12,7 @@ class WeightsController < ApplicationController
 
   def new
     @weight=Weight.new
-    @weight.date = Time.now
+    @weight.date=Time.now
   end
 
   def create
@@ -17,6 +20,7 @@ class WeightsController < ApplicationController
 
     if @weight.save
         current_user.weights << @weight 
+        flash[:notice] = "You have successfully added a new weight."
         redirect_to weights_path
     else
       render new_weight_path
@@ -32,11 +36,10 @@ class WeightsController < ApplicationController
     @weight=Weight.find(params[:id])
 
     if @weight.update_attributes(weight_params)
-        #redirect_to weights_path #weight_path(@weight)
-        redirect_to controller: 'weights', action: 'show', id: @weight.id
+        flash[:notice] = "You have successfully updated the information."
+        redirect_to weights_path #weight_path(@weight)
     else
-      #render edit_weight_path
-      render controller: 'weights', action: 'edit'
+      render edit_weight_path @weight 
     end
 
   end
@@ -45,6 +48,7 @@ class WeightsController < ApplicationController
     weight=Weight.find(params[:id])
 
     weight.destroy
+    flash[:notice] = "You have successfully deleted a record."
     redirect_to weights_path
   end
 

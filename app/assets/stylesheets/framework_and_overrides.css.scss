@@ -14,6 +14,13 @@
 
 }
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
@@ -80,16 +87,6 @@ footer
   text-align: center;
 }
 
-#brand
-{
-  font-family: 'mrs_saint_delafieldregular', cursive;
-}
-
-.brand
-{
-  font-family: 'mrs_saint_delafieldregular', cursive;
-}
-
 .new-font
 {
   font-family: 'mrs_saint_delafieldregular', cursive;
@@ -97,14 +94,13 @@ footer
 
 .panel
 {
-  background-color: black;
+  background-color: lightgreen;
   padding: 5px;
   text-align: center;
 }
 
 /* Barra de navegcion */
 .navbar-brand {
-  font-family: 'mrs_saint_delafieldregular', Verdana, cursive;
   font-size: 35px;
   font-weight: bold;
 
@@ -130,3 +126,13 @@ footer
     box-shadow: 2px 2px 2px #000;
 }
     
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}

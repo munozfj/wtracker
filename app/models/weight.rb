@@ -11,6 +11,4 @@ validates :date, presence: true
 #Validaciones de peso
 validates :weight, presence: true, numericality: true
 
-#VAlidaciones del porcentaje de grasa
-validates :fat_porcentage, numericality: true
 end

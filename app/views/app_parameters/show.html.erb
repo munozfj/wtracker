@@ -1,0 +1,27 @@
+<div class="jumbotron">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @app_parameter.group %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @app_parameter.code %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @app_parameter.value %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @app_parameter.description %>
+</p>
+
+<%= link_to 'Edit', edit_app_parameter_path(@app_parameter) %> |
+<%= link_to 'Back', app_parameters_path %>
+
+</div>

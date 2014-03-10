@@ -1,5 +1,7 @@
 Wtracker::Application.routes.draw do
   
+  resources :app_parameters
+
   devise_for :users
   root 'static_pages#home'
 
