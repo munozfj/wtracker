@@ -4,8 +4,13 @@ ruby '2.1.0'
 
 gem 'rails', '4.0.3'
 
+#Autenticar
 gem 'devise'
+#Diseño CSS
 gem 'bootstrap-sass'
+#Ralizar graficos 
+gem 'chartkick'
+
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
@@ -19,6 +24,7 @@ gem 'quiet_assets'
 
 
 group :development do
+  #Asistente para crear layouts para Bootstrap
   gem 'rails_layout'
 end
 
