@@ -18,6 +18,7 @@ Wtracker::Application.routes.draw do
   match '/help', to: 'static_pages#help', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/panel', to:"static_pages#panel", via: 'get'
+  match '/graph', to:"static_pages#graph", via: 'get'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

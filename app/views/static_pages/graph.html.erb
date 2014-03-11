@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h1 class="new-font">Graph </h1>
+
+
+<%= line_chart [
+{name: 'Weight', data: current_user.weights.map{|w| [w.date,w.weight]}},
+{name: 'Fat %', data: current_user.weights.map{|w| [w.date,w.fat_porcentage]}},
+  ] %>
+
+<%= link_to 'Back', panel_path %>
+        
+</div>

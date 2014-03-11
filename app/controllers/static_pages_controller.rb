@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  before_action :authenticate_user!, only: :panel
+  before_action :authenticate_user!, only: [:panel, :graph]
 
   def home
   end
@@ -15,5 +15,8 @@ class StaticPagesController < ApplicationController
   end
 
   def panel
+  end
+
+  def graph
   end
 end

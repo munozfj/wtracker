@@ -10,7 +10,9 @@ gem 'devise'
 gem 'bootstrap-sass'
 #Ralizar graficos 
 gem 'chartkick'
+gem 'groupdate'
 
+#Otras
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
