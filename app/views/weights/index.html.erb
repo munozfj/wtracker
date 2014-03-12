@@ -3,8 +3,14 @@
 
   <h1 class="new-font">Weight History</h1>
 
-  <%= link_to image_tag('add.png', alt:'add', size:'50x50') , new_weight_path %>
+  
+<%= link_to "<button type='button' class='btn btn-default'>
+  <span class='glyphicon glyphicon-plus-sign'></span> </button>".html_safe , new_weight_path %>
+  
+
+
   <br />
+    <br />
 
   <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover table-condensed">
@@ -16,7 +22,7 @@
           <th>Fat Weight</th>
           <th>BMI</th>
           <th>BMI Category</th>
-          <th>Benedict-Formula</th>
+          <th>HB Formula</th>
           <th></th>
           <th></th>
         </tr>
@@ -32,8 +38,11 @@
             <td><%= bmi (w) %></td>
             <th>Normal</th>
             <td><%= benedict (w) %></td>
-            <td><%= link_to image_tag('edit.png', alt:'edit', size:'22x22')  , edit_weight_path(w) %> </td>
-            <td><%= link_to image_tag('delete.png', alt:'delete', size:'22x22'), w, method: :delete, data: { confirm: 'Are you sure you want to delete this record?' } %></td>
+            <td><%= link_to "<button type='button' class='btn btn-xs'>
+             <span class='glyphicon glyphicon-pencil'></span> </button>".html_safe , 
+             edit_weight_path(w) %> </td>
+            <td><%= link_to "<button type='button' class='btn btn-xs'>
+             <span class='glyphicon glyphicon-remove'></span> </button>".html_safe, w, method: :delete, data: { confirm: 'Are you sure you want to delete this record?' } %></td>
 
           </tr>
         <% end %>
@@ -41,8 +50,10 @@
     </table>
   </div> 
 
-  <br>
-  <%= link_to image_tag('back.png', alt:'back', size:'50x50'), panel_path %>
+
+ 
+  <%= link_to "<button type='button' class='btn btn-default'>
+  <span class='glyphicon glyphicon-chevron-left'></span> </button>".html_safe , panel_path %>
         
 </div>
 

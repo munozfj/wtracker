@@ -1,10 +1,13 @@
 Wtracker::Application.routes.draw do
   
+  root 'static_pages#home'
+  
+  resources :profiles
+
   resources :app_parameters
 
   devise_for :users
-  root 'static_pages#home'
-
+  
   resources :weights
 
   # The priority is based upon order of creation: first created -> highest priority.
