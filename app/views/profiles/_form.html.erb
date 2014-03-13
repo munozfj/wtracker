@@ -33,8 +33,9 @@
   </div>
   <div class="field">
     <%= f.label :activity_type %><br>
-    <%= select_tag(:activity_type, 
-                  options_from_collection_for_select(@activity_levels, :value, :code) ) %>
+
+    <%= collection_select(:profile, :activity_type, @activity_levels, :value, :code, options ={:prompt => 
+      "Select an activity level"}) %>
 
   </div>
   <div class="actions">

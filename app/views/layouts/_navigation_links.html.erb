@@ -3,9 +3,9 @@
 <li><%= link_to 'About',   about_path    %></li>
 <li><%= link_to 'Contact', contact_path  %></li>
 <li><%= link_to 'Help',    help_path     %></li>
-<!--li><= link_to 'Panel',   panel_path     %></li -->
-<% if user_signed_in? %>
 
+<% if user_signed_in? %>
+  <li><%= link_to 'Panel',   panel_path     %></li>
   <!--form class="navbar-form navbar-right" role="form">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">

@@ -22,7 +22,7 @@
           <th>Fat Weight</th>
           <th>BMI</th>
           <th>BMI Category</th>
-          <th>HB Formula</th>
+          <th>BMR</th>
           <th></th>
           <th></th>
         </tr>
@@ -35,9 +35,9 @@
             <td><%= w.weight %></td>
             <td><%= w.fat_porcentage %></td>
             <td><%= fat_weight (w) %></td>
-            <td><%= bmi (w) %></td>
+            <td><%= bmi(w,current_user) %></td>
             <th>Normal</th>
-            <td><%= benedict (w) %></td>
+            <td><%= harry_benedict(w,current_user) %></td>
             <td><%= link_to "<button type='button' class='btn btn-xs'>
              <span class='glyphicon glyphicon-pencil'></span> </button>".html_safe , 
              edit_weight_path(w) %> </td>

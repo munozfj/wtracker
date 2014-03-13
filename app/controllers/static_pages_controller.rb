@@ -15,6 +15,11 @@ class StaticPagesController < ApplicationController
   end
 
   def panel
+    if current_user.profile.blank?
+        profile=Profile.new
+        profile.save
+        current_user.profile=profile
+    end
   end
 
   def graph

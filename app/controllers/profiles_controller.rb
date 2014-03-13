@@ -7,15 +7,6 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.where( user_id: current_user.id)
- #
- #=begin
-  # puts profile
-   # if profile.blank?
-    #  redirect_to new_profile_path
-    #else
-     # redirect_to edit_profile_path(profile[:id])
-    #end=end
-
   end
 
   # GET /profiles/1
@@ -33,7 +24,6 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
-    @profile.user_id=current_user.id
 
     if @profile.save
         flash[:notice]="Profile was successfully created."
@@ -45,7 +35,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    @profile = Profile.where(user_id: current_user.id).limit(1)
+    @profile = Profile.find_by_user_id(current_user.id)
+    @activity_levels=AppParameter.where(group: 'Activity Level')
   end
 
   # PATCH/PUT /profiles/1
