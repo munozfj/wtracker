@@ -1,9 +1,9 @@
 <%# add navigation links to this file %>
-<li><%= link_to 'Home',    root_path     %></li>
+<!-- li><= link_to 'Home',    root_path     %></li -->
 <li><%= link_to 'About',   about_path    %></li>
 <li><%= link_to 'Contact', contact_path  %></li>
 <li><%= link_to 'Help',    help_path     %></li>
-<li><%= link_to 'Panel',   panel_path     %></li>
+<!--li><= link_to 'Panel',   panel_path     %></li -->
 <% if user_signed_in? %>
 
   <!--form class="navbar-form navbar-right" role="form">
@@ -16,12 +16,12 @@
             <button type="submit" class="btn btn-success">Sign in</button>
           </form!-->
   <form class="navbar-form navbar-right" role="form">
-    <%= link_to "Sign out &raquo;".html_safe , destroy_user_session_path, class:"btn btn-success" %>
+    <%= link_to "Sign out &raquo;".html_safe , destroy_user_session_path, class: "btn btn-warning btn-sm active" %>
   </form>
 <% else %>
   
   <form class="navbar-form navbar-right" role="form">
-    <%= link_to "Sign in &raquo;".html_safe , new_user_session_path, class:"btn btn-success" %>
+    <%= link_to "Sign in &raquo;".html_safe , new_user_session_path, class: "btn btn-warning btn-sm active" %>
   </form>
 <% end %>
 

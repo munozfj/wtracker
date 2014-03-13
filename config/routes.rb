@@ -6,7 +6,11 @@ Wtracker::Application.routes.draw do
 
   resources :app_parameters
 
-  devise_for :users
+  devise_for :users, 
+           :controllers  => {
+             :registrations => 'weight_tracker_devise/registrations',
+             :sessions => 'weight_tracker_devise/sessions',
+           }
   
   resources :weights
 
