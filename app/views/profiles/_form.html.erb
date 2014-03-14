@@ -20,8 +20,8 @@
     <%= f.text_field :nickname %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
+    <%= f.label :gender %>
+    <%= f.collection_radio_buttons :gender, AppParameter.where(group: 'Gender'), :code, :value  %>
   </div>
   <div class="field">
     <%= f.label :date_birth %><br>
@@ -29,16 +29,15 @@
   </div>
   <div class="field">
     <%= f.label :height %><br>
-    <%= f.text_field :height %>
+    <%= f.number_field :height , size: 6, step: 0.01, class: "numero" %>
   </div>
   <div class="field">
-    <%= f.label :activity_type %><br>
+    <%= f.label :activity_level %><br>
 
-    <%= collection_select(:profile, :activity_type, @activity_levels, :value, :code, options ={:prompt => 
-      "Select an activity level"}) %>
+    <%= collection_select(:profile, :activity_level, AppParameter.where(group: 'Activity Level'), :value, :code, {:prompt => "Select an activity level"} ) %>
 
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary'%>
   </div>
 <% end %>

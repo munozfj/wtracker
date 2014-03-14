@@ -17,7 +17,6 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
-    @activity_levels=AppParameter.where(group: 'Activity Level')
   end
 
   # POST /profiles
@@ -36,7 +35,6 @@ class ProfilesController < ApplicationController
   # GET /profiles/1/edit
   def edit
     @profile = Profile.find_by_user_id(current_user.id)
-    @activity_levels=AppParameter.where(group: 'Activity Level')
   end
 
   # PATCH/PUT /profiles/1

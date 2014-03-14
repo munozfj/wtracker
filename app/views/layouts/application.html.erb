@@ -6,7 +6,7 @@
 
     <%= render 'layouts/favicons' %>
 
-    <title><%= content_for?(:title) ? yield(:title) : "Wtracker" %></title>
+    <title> <%= page_title %> </title>
    
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     

@@ -1,16 +1,14 @@
+<% page_title "Weight History" %>
 
 <div class="jumbotron">
 
   <h1 class="new-font">Weight History</h1>
 
-  
-<%= link_to "<button type='button' class='btn btn-default'>
+  <%= link_to "<button type='button' class='btn btn-default active'>
   <span class='glyphicon glyphicon-plus-sign'></span> </button>".html_safe , new_weight_path %>
   
-
-
   <br />
-    <br />
+  <br />
 
   <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover table-condensed">
@@ -52,7 +50,7 @@
 
 
  
-  <%= link_to "<button type='button' class='btn btn-default'>
+  <%= link_to "<button type='button' class='btn btn-default active'>
   <span class='glyphicon glyphicon-chevron-left'></span> </button>".html_safe , panel_path %>
         
 </div>

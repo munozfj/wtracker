@@ -18,15 +18,15 @@
   </div>
   <div class="field">
     <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
+    <%= f.text_field :weight , class: 'numero' %>
   </div>
   <div class="field">
     <%= f.label :fat_porcentage %><br>
-    <%= f.text_field :fat_porcentage %>
+    <%= f.text_field :fat_porcentage , class: 'numero' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, class: 'btn btn-primary active' %>
   </div>
   
 <% end %>
