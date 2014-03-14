@@ -1,12 +1,37 @@
 <% page_title "Graphs" %>
 
 <div class="jumbotron">
-  <h1>Graph </h1>
+  <h1>Graphs </h1>
 
-  <%= line_chart [
+  <!--%= line_chart [
   {name: 'Weight', data: current_user.weights.map{|w| [w.date,w.weight]}},
-  {name: 'Fat %', data: current_user.weights.map{|w| [w.date,w.fat_porcentage]}},
-    ] %>
+  {name: 'Fat %', data: current_user.weights.map{|w| [w.date,w.fat_porcentage]}}
+    ], max: xx, min: xx % -->
+
+  <!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#weight" data-toggle="tab">Weight</a></li>
+  <li><a href="#fatp" data-toggle="tab">Fat %</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="weight">
+    <%= line_chart [
+  {name: 'Weight', data: current_user.weights.map{|w| [w.date,w.weight]}   }
+    ], min: @weight_min , max: @weight_max , :library => {:backgroundColor => "#fff"} %>
+  </div>
+
+  <div class="tab-pane fade" id="fatp">
+  <%= line_chart [
+  {name: 'Fat %', data: current_user.weights.map{|w| [w.date,w.fat_porcentage]}   }
+    ], min: @fat_min , max: @fat_max %>
+  </div>
+
+</div>
+
+  <br>
+
 
   <%= link_to "<button type='button' class='btn btn-default active'>
   <span class='glyphicon glyphicon-chevron-left'></span> </button>".html_safe , panel_path %>
