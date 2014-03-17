@@ -1,15 +1,21 @@
 <div class="jumbotron">
 <h1 class="new-font">Application Parameters</h1>
 
-<%= link_to 'New App parameter', new_app_parameter_path %>
-<table class="table">
+<!--= link_to 'New App parameter', new_app_parameter_path % -->
+
+<%= link_to "<button type='button' class='btn btn-default active'>
+  <span class='glyphicon glyphicon-plus-sign'></span> New Parameter</button>".html_safe , new_app_parameter_path %>
+  <br>
+  <br>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
   <thead>
     <tr>
       <th>Group</th>
-      <th>Code</th>
+      <th>Position</th>
+      <th>Name</th>
       <th>Value</th>
       <th>Description</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -19,10 +25,10 @@
     <% @app_parameters.each do |app_parameter| %>
       <tr>
         <td><%= app_parameter.group %></td>
-        <td><%= app_parameter.code %></td>
+        <td><%= app_parameter.position %></td>
+        <td><%= app_parameter.name %></td>
         <td><%= app_parameter.value %></td>
         <td><%= app_parameter.description %></td>
-        <td><%= link_to 'Show', app_parameter %></td>
         <td><%= link_to 'Edit', edit_app_parameter_path(app_parameter) %></td>
         <td><%= link_to 'Destroy', app_parameter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -30,7 +36,8 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'Back', panel_path %>
+<!--= link_to 'Back', panel_path %-->
+ <%= link_to "<button type='button' class='btn btn-default active'>
+  <span class='glyphicon glyphicon-chevron-left'></span> Panel </button>".html_safe , panel_path %>
 </div>

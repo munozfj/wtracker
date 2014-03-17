@@ -40,9 +40,10 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
-      if @profile.update(profile_params)
+      if @profile.update_attributes(profile_params)
         flash[:notice]='Profile was successfully updated.'
-        redirect_to profiles_path
+        #redirect_to profiles_path
+        redirect_to edit_profile_path(@profile)
       else
         render edit_profile_path(@profile)
       end
@@ -66,6 +67,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:user_id, :first_name, :last_name, :nickname, :email, :gender, :date_birth, :height, :activity_type)
+      params.require(:profile).permit(:user_id, :first_name, :last_name, :nickname, :gender, :date_birth, :height, :activity_level)
     end
 end

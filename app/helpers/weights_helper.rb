@@ -6,11 +6,48 @@ module WeightsHelper
   end
 
   def bmi(weight,user)
-    number_with_precision(weight.weight/(user.profile.height**2), precision: 2)
+    bmi_value=number_with_precision(weight.weight/(user.profile.height**2), precision: 2)
+    cat=bmi_category(bmi_value)
+    return "#{bmi_value.to_s} - #{cat}"
+  end
+
+  def bmi_category(value)
+    if value.to_f<15 then
+       "Muy severo bajo peso"
+    elsif (value.to_f >= 15 && value.to_f < 16) then
+       "Severo bajo peso"
+    elsif (value.to_f >= 16 && value.to_f < 18.5) then
+       "Bajo peso"
+    elsif (value.to_f >= 18.5 && value.to_f < 25)  then
+       "Normal"
+    elsif ( value.to_f >= 25 && value.to_f < 30) then
+       "Sobrepeso"
+    elsif (value.to_f >= 30 && value.to_f < 35 ) then
+       "Obesidad Clase I"
+    elsif (value.to_f >= 35 && value.to_f < 40 ) then
+       "Obesidad Clase II"
+    else
+       "Obesidad Clase III"
+    end
   end
 
   def bmr(weight,user)
-   66 + ( 13.7 * weight.weight ) + ( 5 * user.profile.height * 100 ) - ( 6.8 * age(user) )
+    #66 + ( 13.7 * weight.weight ) + ( 5 * user.profile.height * 100 ) - ( 6.8 * age(user) )
+
+    base= (10.0 * weight.weight ) + (6.25 * user.profile.height * 100 ) - (5 * age(user))
+    if user.profile.gender=='M'
+      base + 5
+    else
+      base - 161
+    end
+      
+
+=begin
+      Hombres  TMB = (10 x peso en kg) + (6,25 × altura en cm) - (5 × edad en años) + 5
+      Mujeres  TMB = (10 x peso en kg) + (6,25 × altura en cm) - (5 × edad en años) - 161
+=end
+
+
   end
 
   def age(user)

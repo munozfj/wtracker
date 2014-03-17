@@ -14,14 +14,16 @@
   <div class="field">
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
+    <br>
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
+    <br>
     <%= f.label :nickname %>
     <%= f.text_field :nickname %>
   </div>
   <div class="field">
     <%= f.label :gender %>
-    <%= f.collection_radio_buttons :gender, AppParameter.where(group: 'Gender'), :code, :value  %>
+    <%= f.collection_radio_buttons :gender, AppParameter.where(group: 'Gender').ordered, :value, :name  %>
   </div>
   <div class="field">
     <%= f.label :date_birth %><br>
@@ -29,12 +31,12 @@
   </div>
   <div class="field">
     <%= f.label :height %><br>
-    <%= f.number_field :height , size: 6, step: 0.01, class: "numero" %>
+    <%= f.text_field :height , pattern: "[0-9]*\.[0-9]+", class: "numero" %>
   </div>
   <div class="field">
     <%= f.label :activity_level %><br>
 
-    <%= collection_select(:profile, :activity_level, AppParameter.where(group: 'Activity Level'), :value, :code, {:prompt => "Select an activity level"} ) %>
+    <%= collection_select(:profile, :activity_level, AppParameter.where(group: 'Activity Level').ordered, :value, :name, {:prompt => "Select an activity level"} ) %>
 
   </div>
   <div class="actions">

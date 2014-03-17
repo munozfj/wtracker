@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314101207) do
+ActiveRecord::Schema.define(version: 20140317101014) do
 
   create_table "app_parameters", force: true do |t|
     t.string   "group"
-    t.string   "code"
+    t.string   "name"
     t.string   "value"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "profiles", force: true do |t|

@@ -6,7 +6,7 @@ class AppParametersController < ApplicationController
   # GET /app_parameters
   # GET /app_parameters.json
   def index
-    @app_parameters = AppParameter.all
+    @app_parameters = AppParameter.all.ordered
   end
 
   # GET /app_parameters/1
@@ -71,6 +71,6 @@ class AppParametersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_parameter_params
-      params.require(:app_parameter).permit(:group, :code, :value, :description)
+      params.require(:app_parameter).permit(:group, :position, :name, :value, :description)
     end
 end
