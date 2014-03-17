@@ -1,4 +1,4 @@
 class AppParameter < ActiveRecord::Base
-  scope :ordered, lambda { order("'group' asc, position asc ")}
+  scope :ordered, lambda { order("1 asc, position asc ")}
 
 end
