@@ -7,6 +7,11 @@
 </p>
 
 <p>
+    <strong>Avatar:</strong>
+    <%= image_tag current_user.profile.avatar.url(:thumb) %>
+</p>
+
+<p>
   <strong>First name:</strong>
   <%= @profile.first_name %>
 </p>

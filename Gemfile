@@ -6,11 +6,16 @@ gem 'rails', '4.0.3'
 
 #Autenticar
 gem 'devise'
+
 #Diseño CSS
 gem 'bootstrap-sass'
+
 #Ralizar graficos 
 gem 'chartkick'
 gem 'groupdate'
+
+#Foto de perfil
+gem "paperclip"
 
 #Otras
 gem 'faker'
