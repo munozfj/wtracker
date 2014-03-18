@@ -28,7 +28,7 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= image_tag current_user.profile.avatar.url(:thumb) %></td>
+        <td><%= image_tag current_user.profile.avatar.url(:small) %></td>
         <td><%= profile.first_name %></td>
         <td><%= profile.last_name %></td>
         <td><%= profile.nickname %></td>

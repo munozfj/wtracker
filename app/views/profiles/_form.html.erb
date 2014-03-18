@@ -25,7 +25,7 @@
 
   <div class="field">
     <%= f.label :avatar %><br>
-    <%= image_tag current_user.profile.avatar.url(:thumb) %>
+    <%= image_tag current_user.profile.avatar.url(:medium) %>
     <%= f.file_field :avatar %>
   </div>
 
