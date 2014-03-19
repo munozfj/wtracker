@@ -1,5 +1,7 @@
 Wtracker::Application.routes.draw do
   
+  resources :photos
+
   root 'static_pages#home'
   
   resources :profiles

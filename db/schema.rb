@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317160115) do
+ActiveRecord::Schema.define(version: 20140319150604) do
 
   create_table "app_parameters", force: true do |t|
     t.string   "group"
@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(version: 20140317160115) do
     t.datetime "updated_at"
     t.integer  "position"
   end
+
+  create_table "photos", force: true do |t|
+    t.integer  "user_id"
+    t.date     "date"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
+
+  add_index "photos", ["user_id"], name: "photo_usr_fk_idx"
 
   create_table "profiles", force: true do |t|
     t.integer  "user_id"

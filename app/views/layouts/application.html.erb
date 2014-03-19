@@ -18,6 +18,8 @@
      <script src="//use.edgefonts.net/sail:n4:all;fredericka-the-great:n4:all;strumpf-std:n7:all.js">
      </script>
 
+    <!-- %= yield(:head) %-->
+
   </head>
   <body>
     <header>
@@ -32,11 +34,7 @@
         <%= debug(params) if Rails.env.development? %>
     </div>
 
-
-    
-
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-
 
   </body>
 </html>

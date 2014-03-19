@@ -1,0 +1,27 @@
+<% page_title "Your Photo" %>
+
+<div class="jumbotron">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Picture:</strong>
+    <% if @photo.picture.exists? %>
+            <%= image_tag @photo.picture.url(:thumb) %>
+          <% end %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @photo.date %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @photo.comment %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
+
+</div>
