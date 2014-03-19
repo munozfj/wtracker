@@ -26,5 +26,5 @@ doc/
 .secret
 
 #Configuracion de almacenamiento en Dropbox
-dropbox.yml
-/config/dropbox.yml
+#dropbox.yml
+#/config/dropbox.yml
