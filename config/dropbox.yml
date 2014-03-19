@@ -1,22 +1,8 @@
-development:
-  app_key:  "646c9dlst6c6gqo"
-  app_secret: "klpq08rkxv6c964"
-  access_token: "ih4lnc5wxhal6tn5"
-  access_token_secret:  "xbcwuzz7kewmqef"
-  user_id:  "66790596" 
-  access_type: "app_folder"
-test:
-  app_key:  xx
-  app_secret: xx
-  access_token: xx
-  access_token_secret:  xx
-  user_id:  xx 
-  access_type: "app_folder"
-production:
-  app_key:  "p0lnmadlgkousf3"
-  app_secret: "jmqi1clqk73xe04"
-  access_token: "h4i9tz6vr400igu1"
-  access_token_secret:  "ovca3oac84amggx"
-  user_id:  "66790596" 
-  access_type: "app_folder"
+app_key:  <%= ENV["DROPBOX_APP_KEY"] %>
+app_secret: <%= ENV["DROPBOX_APP_SECRET"] %>
+access_token: <%= ENV["DROPBOX_ACCESS_TOKEN"] %>
+access_token_secret:  <%= ENV["DROPBOX_ACCESS_TOKEN_SECRET"] %>
+user_id:  <%= ENV["DROPBOX_USER_ID"] %>
+access_type: <%= ENV["DROPBOX_ACCESS_TYPE"] %>
+
 

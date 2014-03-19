@@ -16,6 +16,9 @@ gem 'chartkick'
 #Foto de perfil en Dropbox
 gem 'paperclip-dropbox', '>= 1.1.7'
 
+#Segurizacion de variables de ambiente
+gem 'figaro'
+
 #Otras
 gem 'faker'
 gem 'will_paginate'
