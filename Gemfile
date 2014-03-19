@@ -12,10 +12,9 @@ gem 'bootstrap-sass'
 
 #Ralizar graficos 
 gem 'chartkick'
-gem 'groupdate'
 
-#Foto de perfil
-gem "paperclip"
+#Foto de perfil en Dropbox
+gem 'paperclip-dropbox', '>= 1.1.7'
 
 #Otras
 gem 'faker'
@@ -24,6 +23,7 @@ gem 'bootstrap-will_paginate'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'sprockets', '2.11.0'
 
 #Para mostrar errores
 gem 'better_errors'
@@ -52,6 +52,7 @@ end
 # in production environments by default.
 group :assets do
   gem 'sass-rails'
+  #gem 'sass-rails', '~> 4.0.0'
   gem 'coffee-rails'
   gem 'uglifier'
 end

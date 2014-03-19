@@ -25,3 +25,6 @@ doc/
 .idea
 .secret
 
+#Configuracion de almacenamiento en Dropbox
+dropbox.yml
+/config/dropbox.yml

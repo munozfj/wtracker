@@ -10,7 +10,9 @@
 
 <p>
     <strong>Avatar:</strong>
-    <%= image_tag current_user.profile.avatar.url(:thumb) %>
+    <% if current_user.profile.avatar.exists? %>
+            <%= image_tag current_user.profile.avatar.url(:thumb) %>
+          <% end %>
 </p>
 
 <p>
